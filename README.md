@@ -8,7 +8,7 @@ This repository contains solutions to coding questions that are similar to those
 ```bash
 git clone https://github.com/your-username/TCS-NQT-Coding-Questions.git
 
- Navigate to the directory:
+Navigate to the directory:
 
 cd TCS-NQT-Coding-Questions
 
