@@ -8,11 +8,11 @@ This repository contains solutions to coding questions that are similar to those
 ```bash
 git clone https://github.com/your-username/TCS-NQT-Coding-Questions.git
 
- Navigate to the directory:
+Navigate to the directory:
 
 cd TCS-NQT-Coding-Questions
 
-Each coding question is organized into its own folder. Inside each folder, you will find the following:
+Each coding question is organized into its folder. Inside each folder, you will find the following:
 
 README.md: Contains a brief description of the problem statement and the approach used to solve it.
 solution.java: Java script containing the solution code.
