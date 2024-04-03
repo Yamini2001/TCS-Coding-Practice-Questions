@@ -1,33 +1,38 @@
-// Problem Statement: Given an array of n size, rotate the array by k elements using the Block Swap Algorithm.
-
-class Main{
-    public static void reverseArray(int[] arr,int start,int end){
-        while(start<end){
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
+import java.util.*;
+public class Main {
+    public static void swap(int[] arr, int a, int b, int k) {
+        for (int i = 0; i < k; i++) {
+            int temp = arr[a + i];
+            arr[a + i] = arr[b + i];
+            arr[b + i] = temp;
         }
     }
-    public static void rotateByKth(int[] arr,int k){
-        int n = arr.length;
-            reverseArray(arr,0,n-1);
-            reverseArray(arr,n,k-1);
-            reverseArray(arr,0,k-1);
-
-    }
-    public static void printArray(int[] arr){
-        int n = arr.length;
-        for(int i=0;i<n;i++){
-            System.out.println(arr[i]+" ");
+    public static void BlockSwap(int[] arr, int i, int k, int n) {
+        if (k == 0 || k == n)
+            return;
+        // If first part and second part are of same size
+        if (k == n - k) {
+            swap(arr, i, n - k + i, k);
+            return;
+        }
+        // If first part of array is of smaller size
+        else if (k < n - k) {
+            swap(arr, i, n - k + i, k);
+            BlockSwap(arr, i, k, n - k); // second part of array is taken now
+        }
+        // If second part of array is of smaller size
+        else {
+            swap(arr, i, k, n - k);
+            BlockSwap(arr, n - k + i, 2 * k - n, k);
         }
     }
-    public static void main(String[] args){
-        int[] arr={45,12,13,34,25,39};
-        int k =2;
-        rotateByKth(arr,k);
-        printArray(arr);
-
+    public static void main(String args[]) {
+        int[] arr = {1,2,3,4,5,6,7};
+        int n = 7;
+        int k = 2;
+        BlockSwap(arr, 0, k, n);
+        System.out.println("After Rotating the array ");
+        for (int i = 0; i < n; i++)
+            System.out.print(arr[i] + " ");
     }
 }
