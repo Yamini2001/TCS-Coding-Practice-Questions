@@ -1,4 +1,4 @@
-# TCS NQT Coding Questions
+# TCS NQT Coding Practice Questions
 
 ## Overview
 This repository contains solutions to coding questions that are similar to those found in the TCS National Qualifier Test (NQT). These questions cover various topics and difficulty levels that can help you prepare for the TCS NQT or similar coding exams.
