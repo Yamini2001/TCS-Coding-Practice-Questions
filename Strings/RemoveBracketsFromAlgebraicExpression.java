@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-class takeuforward {
+class Main {
 
 
   static String solve(String input) {
