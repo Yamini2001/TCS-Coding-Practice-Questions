@@ -1,28 +1,30 @@
 public class Main {
-  public static String Capitalize(String str, int size) {
-    StringBuffer sb = new StringBuffer(str);
+    public static String capitalizeFirstAndLast(String str) {
+        StringBuilder result = new StringBuilder();
 
-    for (int i = 0; i < size; i++) {
-      if (i == 0 || i == (size - 1)) // Converting first and last index character to
-      uppercase
-      {
-        sb.setCharAt(i, Character.toUpperCase((char)(int) str.charAt(i)));
-      } else if (str.charAt(i) == ' ') // Converting characters present before and
-       after space to uppercase
-      {
-        sb.setCharAt(i - 1, Character.toUpperCase((char)(int) str.charAt(i - 1)));
-        sb.setCharAt(i + 1, Character.toUpperCase((char)(int) str.charAt(i + 1)));
-      }
+        // Split the string into words
+        String[] words = str.split("\\s+");
+
+        // Iterate through each word
+        for (String word : words) {
+            if (!word.isEmpty()) { // Skip empty strings
+                // Capitalize first character
+                char firstChar = Character.toUpperCase(word.charAt(0));
+
+                // Capitalize last character
+                char lastChar = Character.toUpperCase(word.charAt(word.length() - 1));
+
+                // Append modified word to result
+                result.append(firstChar).append(word.substring(1, word.length() - 1)).append(lastChar).append(" ");
+            }
+        }
+
+        return result.toString().trim(); // Remove trailing whitespace
     }
 
-    return sb.toString();
-  }
-  public static void main(String args[]) {
-    String str = "Take u Forward is Awesome";
-    int size = str.length();
-
-    System.out.println("String after capitalizing first and last letter of each word
-    of the string: ");
-    System.out.println(Capitalize(str, size));
-  }
+    public static void main(String[] args) {
+        String sentence = "hello world, how are you";
+        System.out.println("Original sentence: " + sentence);
+        System.out.println("Modified sentence: " + capitalizeFirstAndLast(sentence));
+    }
 }
