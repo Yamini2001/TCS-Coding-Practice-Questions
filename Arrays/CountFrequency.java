@@ -1,6 +1,6 @@
 class Main{
     public static void countFreq(int[] arr,int n){
-        boolean []visited = new bollean[n];
+        boolean []visited = new boolean[n];
         for(int i=0;i<n;i++){
             if(visited[i]==true)
               continue;
