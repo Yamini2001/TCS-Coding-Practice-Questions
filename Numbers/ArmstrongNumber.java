@@ -8,15 +8,16 @@ class Main{
             temp/=10;
         }
         int sum = 0;
-        while(n!=0){
-            int digit = n%10;
+        temp = n;
+        while(temp!=0){
+            int digit = temp%10;
             sum+=Math.pow(digit,count);
-            n/=10;
+            temp/=10;
         }
         return (sum==originalNumber);
     }
     public static void main(String[] args){
-        int n=153;
+        int n = 153;
         if(ArmstrongNumber(n)){
             System.out.println("Armstrong Number");
         }
