@@ -4,7 +4,6 @@ class Main{
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number: ");
         int n = sc.nextInt();
-        int pow = 1;
         int[] binary = new int[32];
         int i=0;
         while(n>0){
