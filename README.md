@@ -22,4 +22,3 @@ Review the problem statements and solutions provided. Feel free to study the sol
 
 If you have any TCS NQT coding questions that you'd like to contribute solutions to, feel free to open a pull request. Contributions are always welcome!
 
-b  
